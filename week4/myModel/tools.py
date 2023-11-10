@@ -17,6 +17,8 @@ def load_parameters(filename):
     with h5py.File(filename, 'r') as hdf:
         for key in hdf.keys():
             parameters[key] = hdf[key][:]
+    
+    return parameters
 
 #* the defination of activation function
 def relu(Z):
