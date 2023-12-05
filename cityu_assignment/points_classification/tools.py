@@ -107,14 +107,6 @@ def forward_porpogate(X, parameters, activation):
         Z = np.dot(W, A_prev) + b
         A = activation_fun(Z)
         caches.append((A, W, b, Z, A_prev))
-        
-        '''
-        print ("A_prev" + str(A_prev.shape))
-        print ("W" + str(W.shape))
-        print ("b" + str(b.shape))
-        print ("Z" + str(Z.shape))
-        print ("A" + str(A.shape))
-        '''
 
 
     WL = parameters["W" + str(L)]
@@ -122,13 +114,6 @@ def forward_porpogate(X, parameters, activation):
     ZL = np.dot(WL, A) + bL
     AL = sigmoid(ZL)
     
-    '''
-    print ("A" + str(A.shape))
-    print ("WL" + str(WL.shape))
-    print ("bL" + str(bL.shape))
-    print ("ZL" + str(ZL.shape))
-    print ("AL" + str(AL.shape))
-    '''
 
     caches.append((AL, WL, bL, ZL, A))
 
@@ -243,4 +228,3 @@ def predict_picture(filename, num_px, num_py, activation):
 
     print("y = " + str(y_final) + ", you predicted that it is a \"" + classes[y_final].decode("utf-8") +  "\" picture.")
 
-    
